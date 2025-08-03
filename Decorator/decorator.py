@@ -29,6 +29,6 @@ white_choco_chocolate_layer=white_chocolate(chocolate_layer)
 def cake_make(flavor, size):
     print(f"{size} {flavor} cake is ready!")
 
-flavor = input("Enter the cake essence: ")  # fixed double input
+flavor = input("Enter the cake essence: ")  
 size = input("Enter the size: ")
 cake_make(flavor, size) 
