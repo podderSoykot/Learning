@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Example</title>
+  </head>
+  <body>
+    <h1>This is an event example.</h1>
+    <p id="demo"></p>
+
+    <button onclick="showTime()">This_Declare_TIME</button>
+    <button onclick="showTime()">Second_Button</button>
+    <button onclick="showCarNames()">Show_Car_Names</button>
+    <button onclick="showText()">Show_Text</button>
+
+    <script>
+      let carname1 = "Volvo";
+      let carname2 = "Volvo2";
+      let text = "I am Frusted";
+
+      function showTime() {
+        document.getElementById("demo").innerHTML = new Date();
+      }
+
+      function showCarNames() {
+        document.getElementById("demo").innerHTML = carname1 + " " + carname2;
+      }
+
+      function showText() {
+        document.getElementById("demo").innerHTML = text;
+      }
+    </script>
+  </body>
+</html>

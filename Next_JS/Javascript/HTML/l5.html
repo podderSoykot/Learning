@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>This is a JavaScript statement</h1>
+    <p id="podder">Original content here.</p>
+
+    <button onclick="myFunction()">Click me</button>
+
+    <script>
+      alert(podder);
+      // First script
+      let x = 5;
+      let y = 6;
+      let z = x + y;
+      document.getElementById("podder").innerHTML =
+        "The value of z is: " + z + ".";
+
+      // Overwriting immediately
+      document.getElementById("podder").innerHTML = "Hello Person";
+
+      // Function to call on button click
+      function myFunction() {
+        document.getElementById("podder").innerHTML = "Hello Dolly!";
+        // This line will overwrite the previous one
+        document.getElementById("podder").innerHTML = "How are you?";
+      }
+    </script>
+  </body>
+</html>
