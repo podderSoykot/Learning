@@ -28,10 +28,10 @@ export default function Home() {
         <HowItWorks />
         <WhyChoose />
         <Testimonials />
-
+        <PricingSection />
+        
         {/* Remaining sections inside container */}
         <Container>
-          <PricingSection />
           <BlogSection />
           <FAQSection />
           <CTASection />

@@ -61,89 +61,104 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-20 bg-muted/30">
-      <div className="">
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-bold tracking-tight font-sans  inline bg-linear-65 from-purple-500 to-pink-500 px-2 py-1">
+    <section
+      id="pricing"
+      className="w-full py-16 bg-gradient-to-b from-purple-50 via-pink-50 to-white"
+    >
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-sm font-bold tracking-tight font-sans inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1 rounded-full">
             SasifyAI Pricing
           </h2>
-          <p className="text-xl text-muted-foreground font-serif max-w-3xl mx-auto mb-8">
+          <p className="text-3xl font-bold text-gray-900 mt-6 mb-2">
             Unlock AI-Powered Writing at the Best Price
           </p>
-          <p className="text-muted-foreground font-serif max-w-4xl mx-auto mb-8">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
             Choose the perfect plan to access AI-driven writing, enhance
             creativity, and streamline content creation effortlessly for any
             project or business.
           </p>
 
-          <div className="inline-flex items-center space-x-2 bg-accent/10 rounded-full p-1">
-            <span className="px-4 py-2 text-sm font-medium">Monthly</span>
-            <span className="px-4 py-2 text-sm font-medium bg-accent text-accent-foreground rounded-full">
-              Yearly
-            </span>
+          {/* Save text + Monthly/Yearly Toggle */}
+          <div className="flex items-center justify-center space-x-4 mb-4">
+            <p className="text-sm text-purple-600">Save 15% on yearly plan!</p>
+
+            <div className="inline-flex items-center space-x-1 bg-white rounded-full p-1 shadow-md border border-gray-200">
+              <button className="px-4 py-2 text-sm font-medium text-white bg-[#3F3EED] rounded-full shadow-sm hover:bg-[#2e2ddd] transition">
+                Yearly
+              </button>
+              <button className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 rounded-full transition">
+                Monthly
+              </button>
+            </div>
           </div>
-          <p className="text-sm text-accent mt-2">Save 15% on yearly plan!</p>
         </div>
 
-        <div className="  grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative border-0 shadow-lg ${
-                plan.popular ? "ring-2 ring-accent" : ""
+              style={
+                plan.popular
+                  ? {
+                      borderColor: "#3F3EED",
+                      borderWidth: "4px",
+                      borderStyle: "solid",
+                      transform: "scale(1.05)",
+                      boxShadow: "0 10px 25px -5px rgba(63, 62, 237, 0.2)",
+                    }
+                  : {}
+              }
+              className={`relative rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ${
+                plan.popular ? "" : "hover:shadow-2xl"
               }`}
             >
               {plan.popular && (
-                <Badge
-                  className="
-                    absolute -top-2 
-                    left-1/2 transform -translate-x-1/2 
-                    bg-accent text-accent-foreground 
-                    px-[116px] py-1
-                    rounded-full 
-                    text-sm font-semibold
-                    shadow-md
-                  "
-                >
-                  Most Popular
+                <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-[#3F3EED] text-white px-27 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center space-x-1">
+                  <span></span>
+                  <span>Most Popular ⭐</span>
                 </Badge>
               )}
 
-
-              <CardHeader className="">
-                <CardTitle className="font-sans text-2xl">
+              <CardHeader className="pb-4 pt-8 px-6">
+                <CardTitle className="text-2xl font-semibold text-gray-800">
                   {plan.name}
                 </CardTitle>
-                <CardDescription className="font-serif">
+                <CardDescription className="text-gray-600">
                   {plan.description}
                 </CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold font-sans">
+                <div className="mt-3 flex items-baseline">
+                  <span className="text-4xl font-extrabold text-gray-900">
                     {plan.price}
                   </span>
-                  <span className="text-muted-foreground font-serif">
-                    {plan.period}
-                  </span>
+                  <span className="text-gray-500 ml-1">{plan.period}</span>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+
+              <CardContent className="px-6 pb-6">
+                {/* All GET STARTED buttons color #3F3EED with px-20 py-6 */}
                 <Button
-                  className={`w-full ${
-                    plan.popular ? "bg-accent hover:bg-accent/90" : ""
-                  }`}
-                  variant={plan.popular ? "default" : "outline"}
+                  className="w-full font-semibold text-sm px-20 py-6 transition-all bg-[#3F3EED] hover:bg-[#2e2ddd] text-white border-none"
+                  variant="default"
                 >
                   {plan.buttonText}
                 </Button>
-                <div className="space-y-3">
-                  <p className="font-medium font-sans">What you get:</p>
+
+                <div className="mt-6 space-y-3">
+                  <p className="font-medium text-gray-800 text-sm">
+                    What you get:
+                  </p>
                   {plan.features.map((feature, featureIndex) => (
                     <div
                       key={featureIndex}
-                      className="flex items-start space-x-3"
+                      className="flex items-start space-x-2"
                     >
-                      <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                      <span className="text-sm font-serif">{feature}</span>
+                      <Check className="h-4 w-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-gray-700 leading-tight">
+                        {feature}
+                      </span>
                     </div>
                   ))}
                 </div>

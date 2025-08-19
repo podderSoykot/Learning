@@ -33,8 +33,11 @@ export function FAQSection() {
     <section className="py-20 bg-muted/30">
       <div className="container">
         <div className="text-center mb-16">
-          <p className="text-sm font-medium text-accent mb-4">SasifyAI FAQ</p>
-          <h2 className="text-3xl font-bold tracking-tight font-sans sm:text-4xl">Got Questions? We've Got Answers!</h2>
+          <div className="inline-block  bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
+            SasifyAI FAQ
+          </div>
+          <h2 className="text-center font-semibold" style={{ color: "var(--Secondary-Secondary500, #0F0D33)", fontFamily: '"Bricolage Grotesque"', fontSize: "38px", lineHeight: "46.36px", letterSpacing: "-0.38px" }}>Got Questions? We've Got Answers!</h2>
+
         </div>
 
         <div className="max-w-3xl mx-auto">

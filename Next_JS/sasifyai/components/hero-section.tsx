@@ -47,7 +47,7 @@ export function HeroSection() {
         </div>
 
         {/* Image */}
-        <div className="mt-16 flex justify-center w-full">
+        <div className="mt-12 flex justify-center w-full">
           <div className="relative w-[970px]">
             <Image
               src="/images/group2.png"
