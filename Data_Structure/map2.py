@@ -26,3 +26,11 @@ results = map(grade, number.items())
 # Convert map to list and print
 for r in results:
     print(r)
+
+f = lambda x: x**2
+print(type(f))  # <class 'function'>
+
+def g(x):
+    return x**2
+print(type(g))  # <class 'function'>
+
