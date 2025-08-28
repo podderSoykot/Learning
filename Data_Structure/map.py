@@ -10,3 +10,5 @@ print(list(square_number))
 
 square_number2=map(lambda x:x **3,numbers)
 print(list(square_number2))
+
+
